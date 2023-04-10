@@ -6,10 +6,12 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    row-gap: 30px;
     width: 100vw;
     height: 100vh;
+    padding: 50px;
     background-color: antiquewhite;
 }
 
@@ -48,6 +50,7 @@ li {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 20px;
     background-color: cornflowerblue;
     border-radius: 100px;
 }
@@ -58,8 +61,8 @@ li {
 }
 
 .home-content {
-    width: 30%;
-    height: 25%;
+    width: 40%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,9 +73,90 @@ li {
     border-radius: 30px;
 }
 
+.home-content:nth-child(4) {
+    height: 15%;
+}
+
 #footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 0.5;
+}
+
+.dishes {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    row-gap: 10px;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 30px;
+}
+
+.contacts {
+    width: 40%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    padding: 20px;
+    background-color: aquamarine;
+    border-radius: 30px;
+}
+
+.img1 {
+    content: url(./hamburger.jpg);
+    width: 80%;
+    height: 100px;
+}
+
+.img2 {
+    content: url(./spaghetti.jpeg);
+    width: 80%;
+    height: 100px;
+}
+
+.img3 {
+    content: url(./beef.jpg);
+    width: 80%;
+    height: 100px;
+}
+
+.img4 {
+    content: url(./chicken.jpg);
+    width: 80%;
+    height: 100px;
+}
+
+.name {
+    font-weight: 900;
+    font-size: 15px;
+    align-self: flex-start;
+}
+
+.price {
+    font-style: italic;
+    align-self: flex-end;
+}
+
+.contact-name {
+    font-size: 25px;
+    align-self: flex-start;
+}
+
+.position {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.number {
+    font-size: 20px;
 }

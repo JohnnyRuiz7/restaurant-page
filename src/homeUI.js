@@ -1,5 +1,4 @@
 export function createHomeUI(container) {
-    let homeContainer = document.createElement('div')
     let restaurantName = document.createElement('div')
     let welcomeMessage = document.createElement('div')
     let openingHours = document.createElement('div')
@@ -16,7 +15,6 @@ export function createHomeUI(container) {
         }
     }
     let location = document.createElement('div')
-    homeContainer.id = 'content'
     restaurantName.id = 'restaurant-name'
     welcomeMessage.className = 'home-content'
     openingHours.className = 'home-content'
@@ -24,6 +22,5 @@ export function createHomeUI(container) {
     restaurantName.textContent = 'The best restaurant'
     welcomeMessage.textContent = 'Hello there, we are a good restaurant lol, come eat here'
     location.textContent = '420 no scope street, Australia'
-    container.appendChild(homeContainer)
-    homeContainer.append(restaurantName, welcomeMessage, openingHours, location)
+    container.append(restaurantName, welcomeMessage, openingHours, location)
 }

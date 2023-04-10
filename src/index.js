@@ -1,15 +1,20 @@
 import './style.css';
 import { createNavbar } from './nav-bar';
-import { createHomeUI } from './homeUI.js';
+import { createHomeUI } from './homeUI';
 import { createFooter } from './footer';
+import { createMenuUI } from './menuUI';
+import { createContactUI } from './contactUI';
 
 //Generate the home page//
 let body = document.querySelector('body')
+let homeContainer = document.createElement('div')
+homeContainer.id = 'content'
 createNavbar(body)
-createHomeUI(body)
+body.appendChild(homeContainer)
+createHomeUI(homeContainer)
 createFooter(body)
 
-//Functions to create UI for each tab//
+//Functions to create UI for each tab after clearing current UI//
 let content = document.querySelector('#content')
 function clearUI() {
     while (content.firstChild) {
@@ -19,15 +24,23 @@ function clearUI() {
 
 function showHome() {
     clearUI()
-    createHomeUI(body)
+    createHomeUI(content)
+    menuButton.addEventListener('click', showMenu, {once: true})
+    contactButton.addEventListener('click', showContact, {once: true})
 }
 
 function showMenu() {
     clearUI()
+    createMenuUI(content)
+    homeButton.addEventListener('click', showHome, {once: true})
+    contactButton.addEventListener('click', showContact, {once: true})
 }
 
 function showContact() {
     clearUI()
+    createContactUI(content)
+    homeButton.addEventListener('click', showHome, {once: true})
+    menuButton.addEventListener('click', showMenu, {once: true})
 }
 
 //assigning actions to the tabs in the navbar//
